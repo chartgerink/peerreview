@@ -1,0 +1,131 @@
+---
+title: "Review of 'Statistical analysis of numerical preclinical radiobiological data'"
+author: "Chris HJ Hartgerink"
+date: '`r format(Sys.time(), "%d %B, %Y")`'
+output: word_document
+---
+
+I read your paper with pleasure; only rarely are articles published in this field so I am happy to review your paper. Despite this however, the way the body of the paper describes the topic, it remained tangential to the topic of interest. This made it hard to follow sometimes and I had to actively remind myself of the idea that was being tested ("is the data anomalous?"). The abstract clearly states you were testing for anomalous data/potential data fabrication, but in the paper itself this is only mentioned in the discussion (with respect to the data studied, that is). Additionally, the structure of the paper is confusing. The paper could benefit from substantial rewriting in order to ensure readability.
+
+Nonetheless, after ploughing through it I think the contents are interesting, and provide an addition to the field. Thank you for this interesting work.
+
+I structure my review per section.
+
+## Introduction
+
+- You start by mentioning fabrication and falsification as fraud, but the scientific integrity literature mostly refrains from calling it fraud because it is a legal term that requires intent. I suggest retaining only the fabrication and falsification mentioned between parentheses.
+ - Please check the sentence "But statistical methods which can readily be used to identify potential data fabrication [4–10] are all but ignored by the ORI and the larger world.". It seems to want to state that they *are* ignored, but it reads as if they are *not*, which is rather confusing. If the meaning is the latter, then the statement is incorrect. Terminal Digit Analysis originated at the ORI, so it is an incorrect statement. Their recent funding also called explicit attention to statistical tools. If you find that not sufficient attention is paid to them, please adjust text to state so.
+- At the end of paragraph 4, you mention the terminal digit analysis for count values. The terminal digit analysis only works on count variables when the mean value is sufficiently high, which you mention by stating that these have to be "inconsequential digits". However, it is unclear to readers unfamiliar that this is a severe limitation and when it applies (e.g., low mean count). Please make this more explicit though, in order to prevent misunderstanding of this method and potential misapplication.
+- At the end of the final paragraph, you mention "Where that probability is less than some reasonable level" --- what would you think is a reasonable level for these kinds of analyses, considering the weighing of performance indicators such as positive predictive value and negative predictive value? This might be valuable to discuss at the end, even despite the overwhelmingly convincing values you found later in the paper.
+
+### The data studied
+
+- The description of the data was somewhat confusing; it is not immediately clear that the RTS does not belong to the mentioned nine. Please add a sentence that makes this more explicit, maybe along the line "We inspected numerical data from the RTS, which was suspected of fabrication [see next point]. We compared this to other, assumably, genuine data. We had access to [...]"
+- The RTS generated the data; do you mean fabricated the data?
+- Great that you uploaded the data to the OSF. Please add the direct link in the text to ensure findability.
+- Is it correct that the PDFs are not included on the OSF and there are private projects? (this serves as a check; the description states that the PDFs are also in the project)
+- I would recommend uploading the Excel spreadsheets in a more sustainable format, such as a CSV file or an ODS file.
+- You mention the three methods used ("These patterns in RTS data included"). Please let the ordering of these mirror the structure of the paper, for consistency's sake.
+
+### Experimental protocols
+
+No comments
+
+### Data sets and probability model
+
+- It was only here it became clear to me that you had the RTS *plus* the nine others from the lab, which were compared (regarding comment 1 for section "The data studied")
+- I suggest that the current text be incorporated in the "The data studied", considering that it is mostly about the data itself and less about the probability model (which is explained more thoroughly in the following section anyway)
+- I suggest making this the section where the probability models are actually explained (instead of in the analysis section below). That way, it is clear how the methods are set up prior to applying them.
+
+### Analysis of triplicate data
+
+This section and its subsections are structured in a confusing manner. There are too many subsections that try to explain too much. The colony and the coulter counts are analyzed separately; however the colony does not get a special subsection whereas the coulter does. Additionally, the methods are described in this section as well, but also seem to be different for the Coulter and colony counts, for the mid-ratio analyses (i.e., colony just superficially, coulter full modeling). Improving the sectioning will help improve the structure (e.g., a methods and results sections, with their respective subsections).
+
+#### Initial mid-ratio review
+
+- For the mean in triplicate values (both in colony and coulter counts), you go to great lengths to model this. For the mid-ratio, you only model the data for the coulter counts. Please adjust such that both are subjected to the same models.
+
+#### Appearance of mean in triplicate samples
+
+No comments.
+
+#### The models for triplicate data
+
+```{r, echo = FALSE}
+lab_colony <- read.csv('20160509scienceopen/lab_colony.csv')
+lab_coulter <- read.csv('20160509scienceopen/lab_coulter.csv')
+bishayee_colony <- read.csv('20160509scienceopen/bishayee_colony.csv')
+bishayee_coulter <- read.csv('20160509scienceopen/bishayee_coulter.csv')
+
+disp_l_colony <- mean(apply(lab_colony[,4:6], 1, var, na.rm = TRUE) / apply(lab_colony[,4:6], 1, mean, na.rm = TRUE), na.rm = TRUE)
+
+disp_l_coulter <- mean(apply(lab_coulter[,3:5], 1, var, na.rm = TRUE) / apply(lab_coulter[,3:5], 1, mean, na.rm = TRUE), na.rm = TRUE)
+
+x <- apply(lab_colony[,4:6], 1, var, na.rm = TRUE) / apply(lab_colony[,4:6], 1, mean, na.rm = TRUE)
+
+```
+
+- This is a strong section when combined with the Appendix, but I miss an essential discussion of one assumption in these models: dispersion. Poisson distributions assume the mean is equal to the variance (i.e., both are equal to lambda). I frequently encounter problems with this in for example Poisson regressions and it might also be a problem here. I inspected the assumably genuine data and noted that the dispersion (i.e., variance/mean) is `r round(disp_l_colony, 3)` in same lab colony counts and `r round(disp_l_coulter, 3)` in same lab coulter Coulter counts. As  such, it seems to me that overdispersion might be a problem for the Coulter counts (note that there might still be a problem for the colony counts as well, given that the range of dispersion is `r round(min(x[!is.na(x)]),3)`-`r round(max(x[!is.na(x)]),3)`). Overdispersion results in underestimation of the p-value you are interested in (i.e., it looks *more* significant).
+
+#### Hypothesis testing I - a nonparametric test
+
+- This subsection provides an intuitive test, but given the next subsection, it seemed somewhat redundant. This method provides an overestimate of the probability (as you mentioned), so the second step needs to be taken anyway if the p-value is large. Moreover, I think, given the confusing structure in the section "Analysis of triplicate data", it is worth considering to take this out and reducing it to a sentence in "Hypothesis II". This will help make the section denser and reduces the complexity of the section.
+
+#### Hypothesis testing II - using $\lambda$ to obtain p-values
+
+- As suggested earlier, there are a lot of methods descriptions in here that can be separately described and provides easier structure.
+
+#### Hypothesis testing III - normal estimation of p-values
+
+- This method was not mentioned previously in the paper, hence, surprised me somewhat. Please mention it earlier (e.g., in a methods section). I also do not see the added value over the Poisson model itself except for computational parsimony at the cost of an additional assumption. Please discuss this further if it is an important aspect of the paper (and if it is not, why does it get an entire subsection?).
+
+#### Application to Coulter counts
+
+- As mentioned before, why do Coulter counts get a separate subsection and colony do not? (I understand this is not the idea, but it seems like this is the case)
+
+#### Probability model for mid-ratios
+
+- Why is this section on mid-ratio probabilities so far removed from the other mid-ratio section?
+- Methods are described, but no results are given? It almost seems as if this section is misplaced.
+
+### Terminal digit analysis
+
+No comments.
+
+### Equal digit analysis
+
+- Please add the $\chi^2$ test values for completeness.
+
+### Summary
+
+This seems like a redundant recap to me, suggest removing this.
+
+### Discussions
+
+#### Limitations
+
+- This might be an appropriate place to discuss the limitations of the Poisson model, with regards to the dispersion mentioned earlier.
+
+#### Power of statistics
+
+- Despite in principle agreement that statistics provide many fruitful avenues in this area, there are certain precautions that should be taken into account. For example, what does a result of anomalous data mean? Or, should the data be simply dredged for evidence of suspicions, as you seem to suggest in the final sentence? If this section is retained, discussion of the dangers of statistics should also be included, in my opinion. 
+
+#### Are RTS data real
+
+- Here you clearly show that the conclusions of these statistical methods are limited, by only concluding that the data collection methods are not equal. This would fit nicely in the previous subsection.
+
+### Remedies
+
+This section includes redundant subsections, these can easily be reduced to just one paragraph.
+
+#### Data available
+
+- Please add the R script and the spreadsheet on the OSF, considering that the data are also available. 
+- Please add the direct OSF link to the project to prevent potential problems in finding the files.
+
+## Minor remarks
+- Please check for "psychological research" or other instances of "psychological"; it should be "psychology research"
+- Table 1 has an uppercase lambda ($\Lambda$) in the first column, please change to lowercase lambda for consistency
+- Table 1, p-value for $\lambda=13$ shows .0301; I think this should be .301? If not, then this becomes a major remark and needs to be checked, considering it would be an aberrant result.
+- Please ensure that all Roman variables are italicized for consistency.
+- Please double check the appendix for typographic errors; I see 4 substantial ones already)
