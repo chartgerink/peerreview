@@ -1,0 +1,118 @@
+* TODO Overestimation of game-training effects review
+  DEADLINE: <2019-02-28 Thu>
+
+** First reading notes
+
+*** Abstract
+
+- [ ] Did they reproduce the results from the original analyses, to
+  confirm that any discrepancies are not due to differences of their
+  own?
+- [ ] Do they justify why their procedures are "stronger and more
+  appropriate adjustments for publication bias"?
+- [ ] Do they explain the erratum and its consequences in depth?
+- [ ] Is their call for more transparent evidence not corrupted by
+  their own practices?
+
+*** Introduction
+
++ 
++ would be nice to know what other cognitive training interventions
+  the authors refer to
+
+*** Publication bias
+
++ lots of claims without supporting references. For example on the
+  effects of publication bias for meta-analysis.
++ Table 1 is missing from the manuscript
++ no argumentation for validity of methods used in p-uniform and
+  selection modeling correction, despite experts being hesitant at
+  best
+
+** Review
+
+The author's manuscript re-examines the findings from Bediou et
+al. (2018; BAMTGB); specifically how publication bias and outcome
+omission might have affected the results. Apparently the manuscript
+has already led to an erratum confirming some issues with the original
+papers for which I'd like to express my appreciation. However, the
+authors seem to indicate a dissatisfaction with the contents of the
+erratum and provide additional information in this manuscript
+regarding the transfer of training effects. The goal seems to be to
+get a better estimate of the effect, joined with an analysis of issues
+in the BAMTGB paper.
+
+The manuscript lacks the detail and finesse to make it possible to
+evaluate the validity of the claims with respect to BAMTGB, nor does
+it convince the reader of the author's proposed objections.
+
+First, the authors provide no direct reproduction of the results of
+BAMTGB in the manuscript. I can find a set of scripts on the Open
+Science Framework, but the manuscript remains the main place to verify
+these results so the reader can be assured any differences are not due
+to errors on the author's side. My worry for sloppiness is compounded
+when an entire table is not included in the manuscript (Table 1 is
+nowhere to be found).
+
+Second, the issues and methods outlined in the "Publication bias"
+section of the manuscript are insufficiently supported. For example,
+the use of p-uniform and selection modeling to adjust for bias with
+multiple outcomes are not supported in any way beyond a footnote
+indicating a set of contradicting opinions from two meta-analytic
+experts (sources which are unverifiable in their current state). The
+footnote also indicates this is a novel approach; still the authors
+provide no evaluation of its value or validity. After this, the
+authors shift the burden of proof back to BAMTGB, which seems
+inappropriate when the claim of the authors here is that there are
+issues that they fail to adequately provide argumentation for. As
+such, the argumentation for this section is unconvincing.
+
+Third, the authors fail to explain why they use a PET correction (in
+the section "BAMTGB’s lab effect and publication bias") after they
+have mentioned its problems in the preceding section. It is also
+noteworthy here that the authors use Egger's test without any critical
+note after just critically evaluating some methods of evaluating
+publication bias. There is sufficient to say about the Egger's test on
+this front. This kind of oversight compounds my worries as stated in
+remarks one and two.
+
+Fourth, I fail to understand the exact procedures applied in the
+analyses throughout the paper. The paper's non-conventional structure
+makes it difficult to understand the research chronology, but in
+itself the structure is non-objectionable if it conveys this despite
+this. However, the authors provide little way of directly validating
+the numbers in the manuscript, except through combing through several
+script files on the OSF and aligning the code with the results
+manually. I would suggest providing a one-to-one script file that
+reproduces each numeric result included, or produce a dynamic document
+(RMarkdown) for the results for clarity.
+
+Fifth, the section on "Unreported overlap between studies" is an
+analysis of the published erratum and preceding public versions on the
+OSF by Bediou et al. Only subsequently in the "Accounting for
+overlapping studies" section does it become clear that the issue seems
+to be with the primary studies and not BAMTGB themselves
+directly. This is a valid point, but the manuscript makes it seem like
+BAMTGB is the primary issue of the authors? This is confusing in the
+manuscript, which is conveyed by the sudden change in the names that
+re-occur: First Bediou, then Bavelier. I found this change rather
+difficult to understand.
+
+In conclusion, my evaluation of the manuscript under consideration is
+that it fails to present an internally coherent, meticulously
+conducted, clearly articulated, and well supported thesis that
+provides sufficient grounds for publication. As such, I was not
+convinced that the manuscript provides "stronger and more appropriate
+adjustments for publication bias" as promised in the abstract. I hope
+the authors can rebuff my points or revise the manuscript if they feel
+I misunderstood key aspects.
+
+Kind regards,
+Chris Hartgerink
+
+*** Minor notes
+
+- non-significant => nonsignificant
+- the acknowledgments still contain the initials, undermining the
+  blinding of the manuscript
+- 
