@@ -1,0 +1,77 @@
+* Collabra review of revision                                        :ATTACH:
+
+  :PROPERTIES:
+  :Attachments: 20190228collabra.org
+  :ID:       78840b54-ef5c-49b0-98d3-a51f71884dea
+  :END:
+
+* General comments and summary of recommendation
+
+Describe your overall impressions and your recommendation, including changes or revisions. Please note that you should pay attention to scientific, methodological, and ethical soundness only, not novelty, topicality, or scope. A checklist of things to you may want to consider is below:
+ - Are the methodologies used appropriate?
+ - Are any methodological weaknesses addressed?
+ - Is all statistical analysis sound?
+ - Does the conclusion (if present) reflect the argument, is it supported by data/facts?
+ - Is the article logically structured, succinct, and does the argument flow coherently?
+ - Are the references adequate and appropriate? *
+
+The authors submitted a revised version of a manuscript I previously
+reviewed. I previously recommended major revisions and am happy to see
+the revised manuscript to be complete and in much better shape.
+
+The methodologies used are appropriate and thoroughly documented. I
+would recommend for the authors to further consolidate these efforts
+into a single document for oversight in the future. Now it is
+transparent, but not open. If the manuscript was compiled from one
+RMarkdown file, it would be much easier to verify all results (and it
+would make life easier for the authors, I think too :)). Nonetheless,
+I can only give this criticism because the authors have already been
+so transparent; this is more a suggestion for future work.
+
+*minor point is to call `_codebook.xlsx` a readme file, it is much
+easier to recognize as the place to go when landing on the project
+page*
+
+The descriptions of the statistical analyses are now also much more
+adequate. I would only suggest explicating what "recommended analyses"
+means in the Table 2 description (it is now a bit confusing and not
+self-contained).
+
+My only remaining worry is that the underreporting of outcomes
+contains a lot of conjecture about the behavior of the Bavelier lab. I
+understand that underreporting is an explanation for the differences
+in the number of DVs presented, but there are also other explanations
+possible. Also, was Bavelier or others in the lab asked whether this
+was the case? They should be given an opportunity to respond to this
+conjecture and provide an explanation (it would also help remove
+conjecture in your General Discussion). If they were given an
+opportunity but didn't respond (or something else), it's worth
+reporting.
+
+All in all, I think that the paper is much better than the previous
+version.
+
+*  Figures/tables/data availability:
+Please comment on the author’s use of tables, charts, figures, ifrelevant. Please acknowledge that adequate underlying data is available to ensure reproducibility (see open data policies per discipline of Collabra here). *
+
+I would like to see direct links to files whenever they are referenced
+to prevent confusion. For example, "R Markdown document provided in
+the online data repository" is a bit confusing when there are multiple
+R markdown files to be found.
+
+Beyond that everything seems to be adequate. I did not rerun the
+scripts myself but from looking at the files it seems like this should
+be reproducible after making several adjustments to the absolute paths
+in the code (I'd recommend using relative paths in the future).
+
+* Ethical approval:
+If humans or animals have been used as research subjects, and/or tissue or field sampling, are the necessary statements of ethical approval by a relevant authority present? Where humans have participated in research, informed consent should also be declared.
+If not, please detail where you think a further ethics approval/statement/follow-up is required. *
+
+Not relevant.
+
+* Language:
+Is the text well written and jargon free? Please comment on the quality of English and any need for improvement beyond the scope of this process. *
+
+Sometimes the authors use a bit lengthy sentences that span almost an
+entire paragraph, but that might be my personal thing.
