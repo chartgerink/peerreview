@@ -1,0 +1,226 @@
+Peer Review Form 1
+
+Thank you for agreeing to complete this peer review. Your time and
+efforts are very much appreciated.
+
+Please review the form below, and enter your review and comments in
+the appropriate boxes.  Note that these text boxes are expandable, by
+clicking and dragging the bottom right corner. In addition to comments
+in this form, you are able edit, comment in, and re-upload the
+manuscript.
+
+Please note that your comments may be forwarded to the author without
+edit. If you wish to provide confidential comments to the editors that
+will not be directly included in feedback to the author, please see
+the "Comments to the editor" section at the end of the review form.
+
+
+
+* General comments and summary of recommendation
+
+Describe your overall impressions and your recommendation, including
+changes or revisions. Please note that you should pay attention to
+scientific, methodological, and ethical soundness only, not novelty,
+topicality, or scope. A checklist of things to you may want to
+consider is below:
+ - Are the methodologies used appropriate?
+ - Are any methodological weaknesses addressed?
+ - Is all statistical analysis sound?
+ - Does the conclusion (if present) reflect the argument, is it supported by data/facts?
+ - Is the article logically structured, succinct, and does the argument flow coherently?
+ - Are the references adequate and appropriate? *
+
+The manuscript includes a Stage 1 Registered Report for a
+meta-analysis on the effects of discrimination and life stressors on
+mental health in people of Muslim faith. I was invited to primarily
+review the methods and statistics of this RR1. I am thankful to the
+authors for submitting a RR, given that as a reviewer I feel much more
+useful this way; I will do my best to provide helpful comments.
+
+The substantive topic is not my expertise, but I found the overview of
+the literature very clear and educational, clearly articulating
+various aspects and the blindspots that the meta-analysis aims to
+fulfill.
+
+** Overview (up to "Present Study")
+
+In the overview, there are a few inferences that seem to be
+erroneous. Specifically, on page 6 it reads 
+#+BEGIN_QUOTE
+To support this claim, in the largest cross-sectional study of Muslim
+Americans (n = 1130) to date, there were no statistically significant
+ethnic group differences in levels of perceived racial discrimination
+or impact of Islamophobia (Abu-Ras, Suárez, & Abu-Bader, 2018).
+#+END_QUOTE
+which uses statistical nonsignificance as an evidence for the absence
+of an effect. This is a inferential error where the absence of
+evidence is taken as the evidence of absence. 
+
+On page 13 it reads
+#+BEGIN_QUOTE
+the association between discrimination and psychological distress was
+stronger for Christian Arab Americans (OR = 4.41, r = .17 vs. OR =
+2.22, r = .10(ns)
+#+END_QUOTE
+which implies there is a direct comparison, but without confidence
+intervals it is difficult to assess whether this is the case. I might
+have misunderstood or there is information missing. I would
+recommend the authors to revisit these inferences and assess how they
+affect their framework (not much I'd think).
+
+I also see the authors refer to forthcoming work multiple times to
+build their framework, and I'd like to recommend the authors include
+links to preprints for the Stage 2 report.
+
+** Present Study
+
+The proposed research questions follow from the provided overview,
+although they can be articulated more precisely to provide a stronger
+preregistration. Specifically, for RQ1, 1a and 1b need to include all
+the relevant variables. Only then do these questions follow the "X ->
+Y, given Z" format for hypotheses (now X->Y only). I would also
+recommend the authors to explicate their expectations, for example by
+adding that they expect a negative relation of discrimination and
+mental health, after controlling for life stressors (if they have
+expectations).
+
+RQ1c remains unclear to me and needs to be articulated more
+clearly. Whether the "effect size estimates differ" can be understood
+as testing the difference between the resulting estimates of 1a and
+1b, or interpreted as a test of the heterogeneity of the results in 1a
+and 1b. I cannot make this distinction based on the current text.
+
+For RQ2, it seems to me that it primarily looks at moderation of the
+effects from RQ1. It confuses me to read that it is preemptively taken
+to not have sufficient results for a meta-regression. I would
+recommend to take the meta-regression approach and provide only the
+analyses for which there are sufficient results available. I found it
+confusing that the authors make this distinction between meta-analysis
+and systematic review. For hypotheses of interest, please do explicate
+these in subquestions following the format highlighted above (X -> Y,
+given Z).
+
+*** Method
+
+The authors have created a vast search strategy, encompassing 11
+databases. For the author's sake, I would eliminate a few if there is
+reasonable overlap (e.g., see what other databases are included in
+SHARE); redundancy may lead to a lot of unnecessary work.
+
+For the search dictionary, I am confused by the inclusion of '#'. This
+is not used in regular expressions or typical databases. Could the
+authors please clarify or remove its usage? If it's to allow for
+dashes instead of spaces, please ensure it's the wildcard * and is
+included in all relevant entries.
+
+Do the authors have any guess as to how many studies may be available
+on this? (e.g., tens, hundreds, thousands?) The project timeline seems
+reasonable, but depends very much on the amount of studies one may
+expect.
+
+With respect to inclusion/exclusion, it is mostly clear what the
+authors try to do. I had a few points of confusion that I included in
+the attached manuscript that may help clear up these issues in a later
+stage.
+
+**** Coding
+
+For the coding, I would expect to see coding protocols to ensure
+consistency and clarity of the procedures. For example, the effect
+size computation is now very unclear in step 3. It might be a good
+idea to do a pilot run and formulate the protocols based on
+that. Otherwise, the stage 2 report may also become very different
+from the stage 1 report (especially given the additional review from
+Prospero that may affect aspects).
+
+How will the information retrieval from the coding be documented? It
+is a particularly streneous and subjective process to extract data,
+but documenting it will make the author's life easier in the long
+run. Here's an example from one of my meta-analyses
+https://osf.io/jixbm/ 
+
+With respect to averaging the correlation measures, I would recommend
+to consider multilevel meta-analysis to deal with the
+interdependencies of different effects within studies. For the studies
+using the exact same sample, it would make sense that the results
+would be the same so I would recommend making a decision on which
+publication to retain and document that decision.
+
+I would like to commend the authors for including a study quality
+assessment, which I don't see that often but is an important aspect.
+
+**** Data analysis plan
+
+The random effects model is appropriate given the heterogeneity of the
+included data, but the authors do not mention many specifics of their
+analytic procedures. Most importantly, the authors want to inspect
+correlations, which require them to use Fisher's transformation prior
+to doing any analyses. They do not mention this in the
+manuscript but this is a requirement for this meta-analysis.
+
+For the estimator, the Hunter-Schmidt is not a recommended choice and
+is also not justified thoroughly. If the number of included studies is
+>30 REML is recommended, otherwise DerSimonian-Laird (per
+https://doi.org/10.3102/10769986030003261). Please also note that
+publication bias affects your heterogeneity estimates drastically, so
+if you have especially small sample studies the reliability of that is
+affected (https://doi.org/10.1037/met0000197; may be relevant
+depending on what RQ1c means)
+
+The moderation analysis can be included in a meta-regression model and
+does not require different methods as mentioned here. The authors
+should explicate how large the group sizes need to be for the various
+moderators to be included (e.g, 10 per group).
+
+The authors do not specify how they will run their meta-analysis, so I
+will recommend using the R package metafor. This is a de facto
+standard for running meta-analyses. This will also allow the authors
+to consider a multilevel meta analysis, as alluded to in the previous
+comments.
+
+To inspect publication bias, funnel plots are only appropriate for
+fixed effects models. As soon as heterogeneity occurs, this kind of
+representation does not work anymore given that the relation between
+error and effect size becomes more complicated. Moreover, the best way
+to inspect the risk of publication bias specifically in this field is
+the sample size of the included studies. The smaller the sample size,
+the larger the chance of spurious effects, when the population effect
+is the same. Publication bias itself affects the whole of the
+literature already.
+
+** Concluding remarks
+
+I think this project is well thought out, but requires additional
+explication of data extraction protocols and substantial improvement
+of the data analysis plan. I am happy the authors submitted a RR1 and
+hope my comments may help improve the project.
+
+Kind regards,
+Chris Hartgerink
+
+* Figures/tables/data availability:
+Please comment on the author’s use of tables, charts, figures,
+ifrelevant. Please acknowledge that adequate underlying data is
+available to ensure reproducibility (see open data policies per
+discipline of Collabra here). *
+
+Figure 1 includes the caption in the Figure; I'd recommend putting it
+in the manuscript. Please also include higher resolution figures in
+the Stage 2 report.
+
+* Ethical approval:
+
+Not relevant, archival research.
+
+
+* Language:
+Is the text well written and jargon free? Please comment on the
+quality of English and any need for improvement beyond the scope of
+this process. *
+
+The manuscript is clear in overall structure and composition although
+there remain a few confusing parts. The manuscript would benefit from
+some additional textual revisions. I found some parts difficult to
+understand due to sentence construction; there also are still some
+typographic errors. I uploaded a manuscript with some comments and
+revisions for the authors to look at if they so wish.
